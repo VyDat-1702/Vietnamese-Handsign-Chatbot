@@ -2,8 +2,8 @@
 
 ## 🔧 System Requirements
 
-- Python 3.8+
-- CUDA 11.8 or 12.1 (if using GPU)
+- Python 3.10+
+- CUDA 12.+ (if using GPU)
 - RAM: Minimum 8GB (Recommended 16GB+)
 - GPU: NVIDIA GPU with 8GB+ VRAM (for training)
 
@@ -13,13 +13,9 @@
 
 ```bash
 # Create virtual environment
-python -m venv venv
-
-# Activate (Windows)
-venv\Scripts\activate
-
-# Activate (Linux/Mac)
-source venv/bin/activate
+conda create -n venv python=3.12
+# Activate 
+conda activate venv
 ```
 
 ### 2. Install Dependencies
@@ -30,15 +26,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**For GPU (CUDA 11.8):**
-
-```bash
-# Edit requirements.txt: uncomment the torch line with cu118
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install -r requirements.txt
-```
-
-**For GPU (CUDA 12.1):**
+**For GPU (CUDA):**
 
 ```bash
 # Edit requirements.txt: uncomment the torch line with cu121
