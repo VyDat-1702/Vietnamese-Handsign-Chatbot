@@ -1,0 +1,39 @@
+# Core dependencies
+python-dotenv==1.0.0
+streamlit==1.31.0
+
+# Hugging Face
+huggingface-hub==0.20.3
+transformers==4.37.2
+
+# LangChain ecosystem
+langchain==0.1.6
+langchain-community==0.0.20
+langchain-huggingface==0.0.1
+langchain-core==0.1.23
+
+# Text processing
+pypdf==4.0.1
+
+# Vector database
+faiss-cpu==1.7.4
+# faiss-gpu==1.7.4  # Uncomment if using GPU
+
+# Embeddings
+sentence-transformers==2.3.1
+
+# Deep learning
+torch==2.1.2
+# torch==2.1.2+cu118  # Uncomment for CUDA 11.8
+# torch==2.1.2+cu121  # Uncomment for CUDA 12.1
+
+# Unsloth (for training/fine-tuning)
+unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+
+# Training utilities (optional, for fine-tuning)
+trl==0.7.10
+datasets==2.16.1
+pandas==2.2.0
+
+# System utilities
+argparse  # Built-in, no need to install
