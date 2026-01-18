@@ -1,0 +1,16 @@
+# Env
+.env
+# Python
+__pycache__/
+*.pyc
+# Data / PDF
+PDF/
+# Vector DB
+VectorDB_FAISS/
+*.faiss
+*.pkl
+# Jupyter
+.ipynb_checkpoints/
+# IDE
+.vscode/
+.idea/
