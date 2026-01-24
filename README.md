@@ -1,13 +1,13 @@
-# 📦 Installation Guide
+# Installation Guide
 
-## 🔧 System Requirements
+## System Requirements
 
 - Python 3.10+
 - CUDA 12.+ (if using GPU)
 - RAM: Minimum 8GB (Recommended 16GB+)
 - GPU: NVIDIA GPU with 8GB+ VRAM (for training)
 
-## ⚡ Quick Installation
+## Quick Installation
 
 ### 1. Create Virtual Environment
 
@@ -54,7 +54,7 @@ pip install faiss-gpu
 pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
 ```
 
-## 🔑 Configuration
+## Configuration
 
 1. Create `.env` file in root directory:
 
@@ -67,7 +67,7 @@ HF_TOKEN=your_huggingface_token_here
    - Create new token with "read" permission
    - Copy and paste into `.env` file
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 project/
@@ -80,7 +80,7 @@ project/
 └── requirements.txt      # Dependencies
 ```
 
-## ✅ Verify Installation
+## Verify Installation
 
 ```python
 # Check torch + CUDA
@@ -98,7 +98,7 @@ import langchain
 print(f"LangChain version: {langchain.__version__}")
 ```
 
-## ⚠️ Common Issues & Solutions
+## Common Issues & Solutions
 
 ### CUDA not available error
 
@@ -122,7 +122,7 @@ pip install faiss-cpu  # or faiss-gpu
 - Reduce `max_seq_length` in `RAG_pipeline.py`
 - Use `load_in_4bit=True` (already default)
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 # Step 1: Create Vector Database
@@ -132,7 +132,7 @@ python Create_VectorDB.py
 streamlit run app.py
 ```
 
-## 📝 Notes
+## Notes
 
 - Unsloth only supports Linux (WSL2 for Windows)
 - Training requires GPU (recommended: A100, V100, or T4)
