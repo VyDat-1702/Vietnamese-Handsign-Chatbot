@@ -18,10 +18,8 @@ if HF_TOKEN is None:
 login(token=HF_TOKEN)
 print("Login successful!")
 
-pdf_dir_path = "PDF"
-vectorDB_path = "VectorDB_FAISS"
 
-def create_vector_db(embedding_model_name: str = "BAAI/bge-m3"):
+def create_vector_db(pdf_dir_path, vectorDB_path):
     loader = DirectoryLoader(
         pdf_dir_path,
         glob="*.pdf",
@@ -37,7 +35,7 @@ def create_vector_db(embedding_model_name: str = "BAAI/bge-m3"):
     chunks = splitter.split_documents(documents)
 
     embedding = HuggingFaceEmbeddings(
-        model_name=embedding_model_name,
+        model_name="BAAI/bge-m3",
         model_kwargs={"device": "cuda"},
         encode_kwargs={"normalize_embeddings": True}
     )
@@ -48,21 +46,15 @@ def create_vector_db(embedding_model_name: str = "BAAI/bge-m3"):
     return db
 
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Create vector database from PDFs")
-    parser.add_argument(
-        '--dbp', 
-        '--db-path',
-        type=str, 
-        default=vectorDB_path,
-        help='Vector database save path'
-    )
+    parser.add_argument('--vdb', type=str, default='VectorDB_FAISS', help='Vector database save path')
+    parser.add_argument('--dbp', type=str, default='PDF', help='Pdf data path')
     
     args = parser.parse_args()
     
     try:
-        create_vector_db(db_path=args.dbp)
+        create_vector_db(args.dbp, args.vdb)
         print("\nVector database created successfully!")
     except Exception as e:
         print(f"\n Error: {str(e)}")

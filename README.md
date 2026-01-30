@@ -14,7 +14,7 @@
 ```bash
 # Create virtual environment
 conda create -n venv python=3.12
-# Activate 
+# Activate
 conda activate venv
 ```
 
@@ -76,7 +76,7 @@ project/
 ├── VectorDB_FAISS/       # Vector database (auto-generated)
 ├── Create_VectorDB.py    # Database creation script
 ├── RAG_pipeline.py       # Core logic
-├── app.py                # Streamlit UI
+├── app_local.py                # Streamlit UI
 └── requirements.txt      # Dependencies
 ```
 

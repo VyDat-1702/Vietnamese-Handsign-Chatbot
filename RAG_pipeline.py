@@ -114,7 +114,7 @@ class RAGPipeline:
             | prompt
             | self.llm
         )
-        
+
         return self.chain
     
     def initialize(self):
